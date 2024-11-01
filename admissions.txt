@@ -1,6 +1,4 @@
 
-
-
 1.	User Class
 o	Purpose: Represents a user of the booking system, storing their name and balance.
 o	Attributes:
