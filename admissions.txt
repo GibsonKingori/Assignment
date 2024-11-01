@@ -1,3 +1,7 @@
+Gibson Gathitu King’ori – 156792
+Kimani Yeshua – 158430
+
+
 
 1.	User Class
 o	Purpose: Represents a user of the booking system, storing their name and balance.
