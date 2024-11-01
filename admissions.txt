@@ -3,3 +3,56 @@ Darren Kiplagat Tanui – 155897
 Gibson Gathitu King’ori – 156792
 Kimani Yeshua – 158430
 Faith Njung’e - 129086
+
+
+
+1.	User Class
+o	Purpose: Represents a user of the booking system, storing their name and balance.
+o	Attributes:
+	name: The user's name.
+	_balance: The user's balance, which is private and can be accessed or modified through specific methods.
+o	Methods:
+	get_balance(): Returns the user's current balance.
+	add_balance(amount): Adds a specified amount to the user's balance if it's positive.
+	deduct_balance(amount): Deducts a specified amount from the user's balance if it’s available.
+
+2.	TravelPackage Class (Abstract)
+o	Purpose: Serves as the abstract base class for travel packages, providing a framework for domestic and international packages.
+o	Attributes:
+	package_name: The name of the travel package.
+	price: The base price of the package.
+o	Methods:
+	calculate_price(): Abstract method that requires subclasses to implement their unique price calculation logic.
+
+3.	DomesticPackage Class (Subclass of TravelPackage)
+o	Purpose: Represents a domestic travel package, with a discount applied to the base price.
+o	Attributes:
+	discount: The discount percentage applied to the package's base price (default is 10%).
+o	Methods:
+	calculate_price(): Calculates the discounted price for the package, applying the discount rate to the base price.
+
+4.	InternationalPackage Class (Subclass of TravelPackage)
+o	Purpose: Represents an international travel package, with a surcharge applied to the base price.
+o	Attributes:
+	surcharge: The surcharge percentage added to the package's base price (default is 20%).
+o	Methods:
+	calculate_price(): Calculates the final price for the package by adding the surcharge to the base price.
+
+5.	BookingSystem Class
+o	Purpose: Manages users, travel packages, and bookings. This class provides methods to add users and packages, create bookings, and cancel bookings.
+o	Attributes:
+	users: Dictionary of users in the system, with usernames as keys and User objects as values.
+	packages: List of all available travel packages.
+	bookings: List of bookings as tuples in the format (user_name, package_name).
+o	Methods:
+	add_user(name, balance): Adds a new user to the system with a specified balance.
+	add_package(package): Adds a new travel package to the list of available packages.
+	create_booking(user_name, package_name): Creates a booking for a user if they have sufficient balance for the package's price.
+	cancel_booking(user_name, package_name): Cancels an existing booking for a user and package.
+
+Usage Example
+In the main execution section:
+•	Two users (Alice and Bob) are added to the system with initial balances.
+•	Two travel packages (a DomesticPackage and an InternationalPackage) are created and added to the system.
+•	Alice and Bob make bookings based on the packages they can afford, and a booking is canceled to demonstrate system functionality.
+
